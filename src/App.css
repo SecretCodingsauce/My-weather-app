@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.weather-info {
+  height: 90vh;
+  margin-top: 25px;
+  margin-inline: 5%;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(21, 20, 20, 0.144);
+}
+
+.weather-info h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #333;
+}
+
+.weather-current p,
+.weather-details p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.weather-details {
+  margin-top: 15px;
+}
+
+.weekly-container{
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap: 1.2rem;
+  overflow-y: auto;
+  overscroll-behavior-x:contain ;
+  scroll-snap-type: x mandatory;
+  height:50%;
+  scrollbar-width: 0.5px;
+  
+
+}
+
+.weekly-cards{
+  scroll-snap-align: start;
+  min-width: 300px;
+  height: 90%;
+  display: flex;
+  scrollbar-width: none;
+ }
+ 
