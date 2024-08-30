@@ -12,14 +12,18 @@ import WeatherMain from './Components/WeatherMain';
 function App() {
 
 
-  
+  const [searchInput,setSearchInput]=useState("")
+ 
   const [submitted,setSubmitted]=useState(false)
   const [city,setCity]=useState("");
   
   const [geoData,setGeoData]=useState(null);
   
   
- 
+ const search=(input)=>{
+  setCity(input);
+  setSubmitted(true);
+ }
 
 
   const [weather, setWeather] = useState(null)
@@ -53,7 +57,7 @@ const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&a
   if(!weather){
   return (
     <div className=" flex-row justify-center items-center weather-info">    
-    <h2>My-Weather-App</h2><p>made by Ayushman Sharma</p>  
+    <h2>My-Weather-App</h2><a  href='https://ayushmansharma-profile.vercel.app/' target='_blank'>made by <span className='text-blue-800 underline'>Ayushman Sharma</span></a>  
      <div className='mt-14 flex-row h-4/5 w-full bg-slate-400 rounded'> 
      <div className='flex-row justify-center items-center p-40'>
      <h2 className='text-center mb-8 text-slate-100'>Search for weather</h2>
@@ -77,7 +81,19 @@ const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&a
 else {
   return(
     <div className='weather-info'>
-      
+      <div className="flex justify-between items-center">
+                <div className="p-3">
+                <h2 className="text-3xl font-medium">My-Weather-App</h2>
+                <a  href='https://ayushmansharma-profile.vercel.app/' target='_blank'>made by <span className='text-blue-800 underline'>Ayushman Sharma</span></a>
+                </div>
+                 <div className="p-3">
+                <input  className="border-2  rounded rounded-e-none border-gray-400 border-r-0" type="text" 
+                        placeholder="location"
+                        value={searchInput}
+                        onChange={(e)=>setSearchInput(e.target.value)}/>
+                <button className="border-2 rounded rounded-s-none border-gray-400 pr-5 pl-5" onClick={()=>{search(searchInput)}}>search</button>
+                </div>
+            </div>
      <WeatherMain weather={weather} geoData={geoData}  />
     
     </div>
