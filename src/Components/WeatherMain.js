@@ -1,5 +1,7 @@
-function WeatherMain({ weather, geoData }) {
+import { useState } from "react";
 
+function WeatherMain({ weather, geoData }) {
+        const [searchInput, setSearchInput]=useState("")
     function getUpcomingDates() {
         const dates = [];
         const today = new Date();
@@ -14,11 +16,23 @@ function WeatherMain({ weather, geoData }) {
     }
     
     const upcomingDates = getUpcomingDates();
-    
+    const search=()=>{}
 
     return (
-        <div>
-            
+        <div className="weather-info ">
+            <div className="flex justify-between items-center">
+                <div className="p-3">
+                <h2 className="text-3xl font-medium">My-Weather-App</h2>
+                <p>made by Ayushman Sharma</p>
+                </div>
+                 <div className="p-3">
+                <input  className="border-2  rounded rounded-e-none border-gray-400 border-r-0" type="text" 
+                        placeholder="location"
+                        value={searchInput}
+                        onChange={(e)=>setSearchInput(e.target.value)}/>
+                <button className="border-2 rounded rounded-s-none border-gray-400 pr-5 pl-5" onClick={()=>{search()}}>search</button>
+                </div>
+            </div>
             <div className="weather-info">
                 <h2>{geoData.name},{geoData.state}</h2>
                 <div className="weather-current">
