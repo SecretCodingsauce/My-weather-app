@@ -11,11 +11,16 @@ import WeatherMain from './Components/WeatherMain';
 
 function App() {
 
+
+  
   const [submitted,setSubmitted]=useState(false)
   const [city,setCity]=useState("");
-  const [country,setCountry]=useState("");
+  
   const [geoData,setGeoData]=useState(null);
   
+  
+ 
+
 
   const [weather, setWeather] = useState(null)
 
@@ -24,7 +29,7 @@ function App() {
   }
 
   const apiKey = "86ae150a97cd0f5d3e00a08a7f65b721"
-const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=1&appid=${apiKey}`
+const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
 
   useEffect(() => {
     if(submitted){
@@ -59,12 +64,7 @@ const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country
                 onChange={(e) => setCity(e.target.value)} 
                 placeholder="Type City Name" 
             />
-      <input  className='border-2 rounded w-1/3 h-10'
-                type="text" 
-                value={country} 
-                onChange={(e) => setCountry(e.target.value)} 
-                placeholder="Type Country Name" 
-            />
+     
 
             <button className='border-2 ml-3 bg-white border-gray-400 h-10 ps-3 pe-3 rounded' onClick={submit}>check weather</button>
             </div>
@@ -74,11 +74,12 @@ const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country
    
   );
 }
-else{
+else {
   return(
-    <div>
-     <WeatherMain weather={weather} geoData={geoData}/>
-     {console.log(weather)}
+    <div className='weather-info'>
+      
+     <WeatherMain weather={weather} geoData={geoData}  />
+    
     </div>
   )
 }}
