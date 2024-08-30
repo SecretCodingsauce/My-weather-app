@@ -33,7 +33,7 @@ function App() {
   }
 
   const apiKey = "86ae150a97cd0f5d3e00a08a7f65b721"
-const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
+const geoApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
 
   useEffect(() => {
     if(submitted){
