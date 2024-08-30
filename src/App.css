@@ -40,19 +40,20 @@
 .weather-info {
   height: 90vh;
   margin-top: 25px;
-  margin-inline: 5%;
+ 
   text-align: left;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid rgba(21, 20, 20, 0.144);
+  font-weight:500;
 }
 
 .weather-info h2 {
   margin-top: 0;
   font-size: 2em;
-  color: #333;
+ 
 }
 
 .weather-current p,
@@ -76,7 +77,7 @@
   scroll-snap-type: x mandatory;
   height:50%;
   scrollbar-width: 0.5px;
-  
+  text-align: center;
 
 }
 
@@ -84,7 +85,7 @@
   scroll-snap-align: start;
   min-width: 300px;
   height: 90%;
-  display: flex;
+ 
   scrollbar-width: none;
  }
  

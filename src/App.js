@@ -14,7 +14,8 @@ function App() {
   const [submitted,setSubmitted]=useState(false)
   const [city,setCity]=useState("");
   const [country,setCountry]=useState("");
-  const [geoData,setGeoData]=useState(null)
+  const [geoData,setGeoData]=useState(null);
+  
 
   const [weather, setWeather] = useState(null)
 
@@ -37,6 +38,7 @@ const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country
       
       })
       .catch((error) => {
+       
         console.error('Axios error:', error);
       })
       setSubmitted(false)
@@ -45,22 +47,29 @@ const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country
 
   if(!weather){
   return (
-    <div className="App">      
-      <input 
+    <div className=" flex-row justify-center items-center weather-info">    
+    <h2>My-Weather-App</h2><p>made by Ayushman Sharma</p>  
+     <div className='mt-14 flex-row h-4/5 w-full bg-slate-400 rounded'> 
+     <div className='flex-row justify-center items-center p-40'>
+     <h2 className='text-center mb-8 text-slate-100'>Search for weather</h2>
+     <div className='flex justify-center items-center'>
+     <input className='border-2 rounded w-1/3 h-10'
                 type="text" 
                 value={city} 
                 onChange={(e) => setCity(e.target.value)} 
                 placeholder="Type City Name" 
             />
-      <input 
+      <input  className='border-2 rounded w-1/3 h-10'
                 type="text" 
                 value={country} 
                 onChange={(e) => setCountry(e.target.value)} 
                 placeholder="Type Country Name" 
             />
 
-            <button onClick={submit}>submit</button>
-            
+            <button className='border-2 ml-3 bg-white border-gray-400 h-10 ps-3 pe-3 rounded' onClick={submit}>check weather</button>
+            </div>
+            </div>
+            </div>
     </div>
    
   );
@@ -69,6 +78,7 @@ else{
   return(
     <div>
      <WeatherMain weather={weather} geoData={geoData}/>
+     {console.log(weather)}
     </div>
   )
 }}
