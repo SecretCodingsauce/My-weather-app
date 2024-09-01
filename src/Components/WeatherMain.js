@@ -24,13 +24,13 @@ function WeatherMain({ weather, geoData }) {
             <div className="weather-info">
                 <h2>{geoData.name},{geoData.state}</h2>
                 <div className="weather-current">
-                    <div className="flex justify-between">
+                    <div className=" flex flex-col-reverse md:flex-row md:justify-between">
                         <div>
                     <p>Temperature: <span className="text-2xl font-medium text-black">{weather.daily[0].temp.max}°C/</span><span className="text-m font-medium text-black">{weather.daily[0].temp.min}°C</span></p>
                     <p>Condition: {weather.daily[0].summary}</p>
                     <p>Feels Like: {weather.current.feels_like}°C</p>
                     </div>
-                    <div className="flex justify-center items-center">
+                    <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-3 mb-3 md:mt-0 md:mb-0">
                         
                     <span className="text-4xl font-medium">{weather.current.temp}°C</span>
                     <img className="min-h-42"  alt="" src={`https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`}/>

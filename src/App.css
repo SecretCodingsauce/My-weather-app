@@ -67,19 +67,7 @@
   margin-top: 15px;
 }
 
-.weekly-container{
-  display: grid;
-  grid-auto-flow: column;
-  scroll-behavior: auto;
-  gap: 1.2rem;
-  overflow-y: auto;
-  overscroll-behavior-x:contain ;
-  scroll-snap-type: x mandatory;
-  height:50%;
-  scrollbar-width: 0.5px;
-  text-align: center;
 
-}
 
 .weekly-cards{
   scroll-snap-align: start;
@@ -89,3 +77,17 @@
   scrollbar-width: none;
  }
  
+ @media (min-width: 768px) {
+  .weekly-container{
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x:contain ;
+    scroll-snap-type: x mandatory;
+    height:50%;
+    scrollbar-width: 0.5px;
+    text-align: center;
+  }
+ }
