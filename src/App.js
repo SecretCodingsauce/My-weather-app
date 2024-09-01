@@ -56,13 +56,13 @@ const geoApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&
 
   if(!weather){
   return (
-    <div className=" flex-row justify-center items-center weather-info">    
-    <h2>My-Weather-App</h2><a  href='https://ayushmansharma-profile.vercel.app/' target='_blank'>made by <span className='text-blue-800 underline'>Ayushman Sharma</span></a>  
-     <div className='mt-14 flex-row h-4/5 w-full bg-slate-400 rounded'> 
-     <div className='flex-row justify-center items-center p-40'>
+    <div className=" weather-info">    
+    <h2>My-Weather-App</h2><a  href='https://ayushmansharma-profile.vercel.app/'  rel="noreferrer" target='_blank'>made by <span className='text-blue-800 underline'>Ayushman Sharma</span></a>  
+     <div className='bg-slate-400 p-7 mt-3 rounded md:mt-14 md:flex-row md:h-4/5 '> 
+     <div className='md:flex-row md:justify-center md:items-center md:p-40'>
      <h2 className='text-center mb-8 text-slate-100'>Search for weather</h2>
-     <div className='flex justify-center items-center'>
-     <input className='border-2 rounded w-1/3 h-10'
+     <div className=' md:flex grid grid-cols-1 items-center justify-center'>
+     <input className='border-2 text-center md:text-left rounded md:w-1/3 w-auto h-10'
                 type="text" 
                 value={city} 
                 onChange={(e) => setCity(e.target.value)} 
@@ -70,7 +70,7 @@ const geoApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&
             />
      
 
-            <button className='border-2 ml-3 bg-white border-gray-400 h-10 ps-3 pe-3 rounded' onClick={submit}>check weather</button>
+            <button className='border-2 mt-3 bg-white border-gray-400 h-10 ps-3 pe-3 rounded md:ml-3 md:mt-0' onClick={submit}>check weather</button>
             </div>
             </div>
             </div>
@@ -81,10 +81,10 @@ const geoApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&
 else {
   return(
     <div className='weather-info'>
-      <div className="flex justify-between items-center">
+      <div className="md:flex justify-between items-center">
                 <div className="p-3">
                 <h2 className="text-3xl font-medium">My-Weather-App</h2>
-                <a  href='https://ayushmansharma-profile.vercel.app/' target='_blank'>made by <span className='text-blue-800 underline'>Ayushman Sharma</span></a>
+                <a  href='https://ayushmansharma-profile.vercel.app/' rel="noreferrer" target='_blank'>made by <span className='text-blue-800 underline'>Ayushman Sharma</span></a>
                 </div>
                  <div className="p-3">
                 <input  className="border-2  rounded rounded-e-none border-gray-400 border-r-0" type="text" 
