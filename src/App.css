@@ -37,6 +37,22 @@
   }
 }
 
+@media (min-width: 200px) {
+  .weather-info {
+    height: auto;
+    margin-top: 25px;
+    margin-inline: 10px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(21, 20, 20, 0.144);
+    font-weight:500;
+  }
+}
+
+@media (min-width: 768px) {
 .weather-info {
   height: auto;
   margin-top: 25px;
@@ -48,6 +64,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid rgba(21, 20, 20, 0.144);
   font-weight:500;
+}
 }
 
 .weather-info h2 {
